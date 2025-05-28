@@ -1,0 +1,8 @@
+# backend/requirements.txt
+fastapi==0.95.0
+uvicorn==0.21.1
+sqlalchemy==2.0.9
+psycopg2-binary==2.9.6
+pandas==2.0.0
+langchain==0.0.206
+langchain-openai==0.0.1
