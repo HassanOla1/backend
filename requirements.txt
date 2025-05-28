@@ -6,3 +6,4 @@ psycopg2-binary==2.9.6
 pandas==2.0.0
 langchain==0.0.206
 langchain-openai==0.0.1
+langchain[experimental]==0.0.206
