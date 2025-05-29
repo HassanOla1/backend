@@ -1,0 +1,4 @@
+id,country,year,revenue_usd,growth_rate,sector,market_type,customer_type,halal_certification_id,source_url,created_at
+1,Malaysia,2023,2500000,9.1,Food,B2C,Muslim,,,2025-05-27 19:18:40.190915
+2,Indonesia,2023,1800000,7.8,Fashion,B2B,Non-Muslim,,,2025-05-27 19:18:40.190915
+3,Saudi Arabia,2023,3200000,12.5,Pharmaceuticals,B2B,Muslim,,,2025-05-27 19:18:40.190915
