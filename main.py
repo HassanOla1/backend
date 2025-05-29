@@ -99,7 +99,7 @@ def initialize_db():
             with open("data/schema.sql", "r") as f:
                 for line in f.read().split(";"):
                     line = line.strip()
-                    if line:  # Skip empty lines
+                    if line:
                         conn.execute(text(line + ";"))
             
             # Execute insert_data.sql line by line

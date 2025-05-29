@@ -27,13 +27,6 @@
     ('Malaysia', 2018, 88.0, 74.0, 98.0, 63.0, 75.0, 'Education', '15-24', 'Female'),
     ('Indonesia', 2018, 60.0, 42.0, 79.5, 52.5, 61.5, 'Education', '15-24', 'Male');
     
-INSERT INTO household_ict (country, year, internet_usage_rate, computer_ownership_rate, mobile_phone_usage, ict_skills, youth_computer_skills, purpose_of_internet_use, age_group, sex) VALUES
-    ('Malaysia', 2018, 80.5, 68.3, 92.1, 65.2, 75.3, 'Education', '15-24', 'Female'),
-    ('Indonesia', 2018, 62.2, 45.4, 82.3, 54.7, 64.1, 'Communication', '25-34', 'Male');
-    
-
-
-
 INSERT INTO ict_services (
   country, year, establishment_count, gross_output, intermediate_input, value_added
 ) VALUES
@@ -99,14 +92,6 @@ INSERT INTO household_ict (country, year, internet_usage_rate, computer_ownershi
 ('Saudi Arabia', 2019, 86.5, 74.0, 96.8, 71.2, 81.5, 'Communication', '25-34', 'Male'),
 ('Saudi Arabia', 2020, 88.0, 75.6, 97.5, 72.5, 83.0, 'Entertainment', '35-44', 'Female'),
 ('Saudi Arabia', 2021, 89.5, 77.1, 98.2, 73.8, 84.5, 'Work', '45-54', 'Male');
-
-
-IINSERT INTO islamic_fintech (
-  platform_name, country, year, transaction_volume_usd, active_users, service_type,
-  funding_rounds, regulatory_approval, sharia_certified, certification_body, transaction_volume
-) VALUES
-    ('FinHalal', 'Malaysia', 2018, 10000000, 450000, 'Payment Gateway', 2, 1, 1, 'Shariah Board MY', 10000000),
-    ('IslamicPay', 'Indonesia', 2018, 8500000, 350000, 'Crowdfunding', 1, 1, 1, 'Shariah Board ID', 8500000);
 
 -- Insert sample data into halal_ecommerce
 INSERT INTO halal_ecommerce (
