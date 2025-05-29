@@ -1,30 +1,3 @@
-
-CREATE TABLE IF NOT EXISTS ict_services (
-    id SERIAL PRIMARY KEY,
-    country VARCHAR(50),
-    year INT,
-    establishment_count INT,
-    gross_output BIGINT,
-    intermediate_input BIGINT,
-    value_added BIGINT
-);
-
-
-CREATE TABLE IF NOT EXISTS household_ict (
-    id SERIAL PRIMARY KEY,
-    country VARCHAR(50),
-    year INT,
-    internet_usage_rate FLOAT,
-    computer_ownership_rate FLOAT,
-    mobile_phone_usage FLOAT,
-    ict_skills FLOAT,
-    youth_computer_skills FLOAT,
-    purpose_of_internet_use VARCHAR(50),
-    age_group VARCHAR(20),
-    sex VARCHAR(10)
-);
-
-
     INSERT INTO ict_services (country, year, establishment_count, gross_output, intermediate_input, value_added) VALUES
     ('Malaysia', 2018, 420, 2800000, 1100000, 1700000),
     ('Indonesia', 2018, 390, 2600000, 950000, 1650000),
@@ -54,11 +27,9 @@ CREATE TABLE IF NOT EXISTS household_ict (
     ('Malaysia', 2018, 88.0, 74.0, 98.0, 63.0, 75.0, 'Education', '15-24', 'Female'),
     ('Indonesia', 2018, 60.0, 42.0, 79.5, 52.5, 61.5, 'Education', '15-24', 'Male');
     
-
-    INSERT INTO household_ict (...) VALUES
-    ('Indonesia', 2018, 60.0, 42.0, 79.5, 52.5, 61.5, 'Education', '15-24', 'Female'),
-    ('Saudi Arabia', 2018, 93.0, 67.0, 97.5, 68.0, 77.0, 'Education', '15-24', 'Male'),
-    ('Saudi Arabia', 2018, 93.0, 67.0, 97.5, 68.0, 77.0, 'Education', '15-24', 'Female');
+INSERT INTO household_ict (country, year, internet_usage_rate, computer_ownership_rate, mobile_phone_usage, ict_skills, youth_computer_skills, purpose_of_internet_use, age_group, sex) VALUES
+    ('Malaysia', 2018, 80.5, 68.3, 92.1, 65.2, 75.3, 'Education', '15-24', 'Female'),
+    ('Indonesia', 2018, 62.2, 45.4, 82.3, 54.7, 64.1, 'Communication', '25-34', 'Male');
     
 
 
@@ -168,23 +139,12 @@ INSERT INTO household_ict (
 ('Indonesia', 2021, 67.5, 49.5, 87.5, 59.5, 69.5, 'Entertainment', '35-44', 'Female'),
 ('Saudi Arabia', 2021, 92.0, 76.0, 97.5, 74.0, 83.0, 'Work', '45-54', 'Male');
 
-INSERT INTO islamic_fintech (
+IINSERT INTO islamic_fintech (
   platform_name, country, year, transaction_volume_usd, active_users, service_type,
   funding_rounds, regulatory_approval, sharia_certified, certification_body, transaction_volume
 ) VALUES
-('FinHalal', 'Malaysia', 2018, 10000000, 450000, 'Payment Gateway', 2, TRUE, TRUE, 'Shariah Board MY', 10000000),
-('IslamicPay', 'Indonesia', 2018, 8500000, 350000, 'Crowdfunding', 1, TRUE, TRUE, 'Shariah Board ID', 8500000),
-('HalalTech', 'Saudi Arabia', 2018, 14000000, 550000, 'Digital Wallet', 3, TRUE, TRUE, 'Shariah Board SA', 14000000),
-('FinHalal', 'Malaysia', 2018, 10200000, 460000, 'Investment Platform', 2, TRUE, TRUE, 'Shariah Board MY', 10200000),
-('IslamicPay', 'Indonesia', 2018, 8700000, 360000, 'Payment Gateway', 1, TRUE, TRUE, 'Shariah Board ID', 8700000),
-('HalalTech', 'Saudi Arabia', 2018, 14200000, 560000, 'Crowdfunding', 3, TRUE, TRUE, 'Shariah Board SA', 14200000),
-('FinHalal', 'Malaysia', 2019, 11000000, 480000, 'Digital Wallet', 3, TRUE, TRUE, 'Shariah Board MY', 11000000),
-('IslamicPay', 'Indonesia', 2019, 9000000, 370000, 'Investment Platform', 2, TRUE, TRUE, 'Shariah Board ID', 9000000),
-('HalalTech', 'Saudi Arabia', 2019, 14500000, 580000, 'Payment Gateway', 4, TRUE, TRUE, 'Shariah Board SA', 14500000),
-('FinHalal', 'Malaysia', 2019, 11200000, 490000, 'Crowdfunding', 3, TRUE, TRUE, 'Shariah Board MY', 11200000),
-('IslamicPay', 'Indonesia', 2019, 9200000, 380000, 'Digital Wallet', 2, TRUE, TRUE, 'Shariah Board ID', 9200000),
-('HalalTech', 'Saudi Arabia', 2019, 14700000, 590000, 'Investment Platform', 4, TRUE, TRUE, 'Shariah Board SA', 14700000),
-('FinHalal', 'Malaysia', 2020, 12000000, 500000, 'Payment Gateway', 4, TRUE, TRUE, 'Shariah Board MY', 12000000);
+    ('FinHalal', 'Malaysia', 2018, 10000000, 450000, 'Payment Gateway', 2, 1, 1, 'Shariah Board MY', 10000000),
+    ('IslamicPay', 'Indonesia', 2018, 8500000, 350000, 'Crowdfunding', 1, 1, 1, 'Shariah Board ID', 8500000);
 
 -- Insert sample data into halal_ecommerce
 INSERT INTO halal_ecommerce (
