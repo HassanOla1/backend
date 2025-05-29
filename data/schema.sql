@@ -31,37 +31,37 @@ CREATE TABLE IF NOT EXISTS islamic_fintech (
     active_users INTEGER,
     service_type TEXT,
     funding_rounds INTEGER,
-    regulatory_approval BOOLEAN,
-    sharia_certified BOOLEAN,
+    regulatory_approval INTEGER,  -- Changed to INTEGER for SQLite
+    sharia_certified INTEGER,     -- Changed to INTEGER for SQLite
     certification_body TEXT,
     transaction_volume INTEGER
 );
+
 -- e_commerce table
 CREATE TABLE IF NOT EXISTS e_commerce (
-  id SERIAL PRIMARY KEY,
-  income DOUBLE PRECISION,
-  expenditure DOUBLE PRECISION,
-  sector VARCHAR(100),
-  market_type VARCHAR(100),
-  customer_type VARCHAR(100),
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  income REAL,                   -- Changed from DOUBLE PRECISION
+  expenditure REAL,              -- Changed from DOUBLE PRECISION
+  sector TEXT,                   -- Changed from VARCHAR
+  market_type TEXT,              -- Changed from VARCHAR
+  customer_type TEXT,            -- Changed from VARCHAR
   year INTEGER,
-  country VARCHAR(100)
+  country TEXT                   -- Changed from VARCHAR
 );
 
 -- halal_ecommerce table
 CREATE TABLE IF NOT EXISTS halal_ecommerce (
-  id SERIAL PRIMARY KEY,
-  country VARCHAR(100),
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  country TEXT,                  -- Changed from VARCHAR
   year INTEGER,
-  revenue_usd DOUBLE PRECISION,
-  sector VARCHAR(50),
-  market_type VARCHAR(50),
-  customer_type VARCHAR(50),
-  growth_rate DOUBLE PRECISION,
+  revenue_usd REAL,              -- Changed from DOUBLE PRECISION
+  sector TEXT,                   -- Changed from VARCHAR
+  market_type TEXT,              -- Changed from VARCHAR
+  customer_type TEXT,            -- Changed from VARCHAR
+  growth_rate REAL,              -- Changed from DOUBLE PRECISION
   source_url TEXT,
-  halal_certification_id VARCHAR(50)
+  halal_certification_id TEXT    -- Changed from VARCHAR
 );
-
 
 -- internet_penetration table
 CREATE TABLE IF NOT EXISTS internet_penetration (
@@ -72,61 +72,58 @@ CREATE TABLE IF NOT EXISTS internet_penetration (
 
 -- islamic_digital_signatures table
 CREATE TABLE IF NOT EXISTS islamic_digital_signatures (
-  id SERIAL PRIMARY KEY,
-  country VARCHAR(100),
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  country TEXT,                  -- Changed from VARCHAR
   year INTEGER,
   blockchain_projects INTEGER,
-  halal_supply_chain BOOLEAN,
+  halal_supply_chain INTEGER,    -- Changed to INTEGER for SQLite
   smart_contracts INTEGER,
-  market_size_usd DOUBLE PRECISION
+  market_size_usd REAL           -- Changed from DOUBLE PRECISION
 );
 
 -- islamic_economy_metadata table
 CREATE TABLE IF NOT EXISTS islamic_economy_metadata (
-  id SERIAL PRIMARY KEY,
-  table_name VARCHAR(100),
-  source VARCHAR(255),
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  table_name TEXT,               -- Changed from VARCHAR
+  source TEXT,                   -- Changed from VARCHAR
   description TEXT,
-  last_updated DATE
+  last_updated TEXT              -- Changed from DATE (SQLite doesn't have date type)
 );
-
-
 
 -- islamic_msme table
 CREATE TABLE IF NOT EXISTS islamic_msme (
-  id SERIAL PRIMARY KEY,
-  country VARCHAR(100),
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  country TEXT,                  -- Changed from VARCHAR
   year INTEGER,
   msme_count INTEGER,
-  digital_adoption_rate DOUBLE PRECISION,
-  tool_type VARCHAR(50),
-  revenue_impact DOUBLE PRECISION,
+  digital_adoption_rate REAL,    -- Changed from DOUBLE PRECISION
+  tool_type TEXT,                -- Changed from VARCHAR
+  revenue_impact REAL,           -- Changed from DOUBLE PRECISION
   challenges TEXT,
-  fatwa_approval BOOLEAN
+  fatwa_approval INTEGER         -- Changed to INTEGER for SQLite
 );
 
 -- msme_ecommerce table
 CREATE TABLE IF NOT EXISTS msme_ecommerce (
-  id SERIAL PRIMARY KEY,
-  sector VARCHAR(100),
-  market_type VARCHAR(100),
-  customer_type VARCHAR(100),
-  income DOUBLE PRECISION,
-  expenditure DOUBLE PRECISION,
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  sector TEXT,                   -- Changed from VARCHAR
+  market_type TEXT,              -- Changed from VARCHAR
+  customer_type TEXT,            -- Changed from VARCHAR
+  income REAL,                   -- Changed from DOUBLE PRECISION
+  expenditure REAL,              -- Changed from DOUBLE PRECISION
   year INTEGER,
-  country VARCHAR(100),
-  is_islamic BOOLEAN
+  country TEXT,                  -- Changed from VARCHAR
+  is_islamic INTEGER             -- Changed to INTEGER for SQLite
 );
 
 -- penetration_rates table
 CREATE TABLE IF NOT EXISTS penetration_rates (
-  id SERIAL PRIMARY KEY,
-  broadband_subscriptions DOUBLE PRECISION,
-  pay_tv_penetration DOUBLE PRECISION,
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  broadband_subscriptions REAL,  -- Changed from DOUBLE PRECISION
+  pay_tv_penetration REAL,       -- Changed from DOUBLE PRECISION
   digital_signature_certificates INTEGER,
-  four_g_coverage DOUBLE PRECISION,
-  five_g_coverage DOUBLE PRECISION,
+  four_g_coverage REAL,          -- Changed from DOUBLE PRECISION
+  five_g_coverage REAL,          -- Changed from DOUBLE PRECISION
   year INTEGER,
-  country VARCHAR(100)
+  country TEXT                   -- Changed from VARCHAR
 );
-
