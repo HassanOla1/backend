@@ -95,9 +95,18 @@ def summary_table(
 def initialize_db():
     try:
         with engine.begin() as conn:
+            # Execute schema.sql line by line
             with open("data/schema.sql", "r") as f:
-                conn.execute(text(f.read()))
+                for line in f.read().split(";"):
+                    line = line.strip()
+                    if line:  # Skip empty lines
+                        conn.execute(text(line + ";"))
+            
+            # Execute insert_data.sql line by line
             with open("data/insert_data.sql", "r") as f:
-                conn.execute(text(f.read()))
+                for line in f.read().split(";"):
+                    line = line.strip()
+                    if line:
+                        conn.execute(text(line + ";"))
     except Exception as e:
         print(f"[ERROR] DB initialization failed: {e}")
